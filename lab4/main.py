@@ -1,4 +1,5 @@
-from fa import FA
+from lab4.ui import UI
 
 if __name__ == '__main__':
-    automata = FA("fa.in")
+    ui = UI()
+    ui.run()

@@ -1,0 +1,12 @@
+digraph finite_state_machine {
+	graph [rankdir=LR]
+	p [shape=circle]
+	q [shape=circle]
+	r [shape=doublecircle]
+	s [shape=doublecircle]
+	p -> q [label=0]
+	q -> q [label=0]
+	q -> r [label=1]
+	p -> r [label=1]
+	p -> s [label=2]
+}

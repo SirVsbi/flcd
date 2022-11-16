@@ -1,9 +1,10 @@
-Q = p q r
-E = 0 1
+Q = p q r s
+E = 0 1 2
 q0 = p
-F = r
+F = r s
 S =
     (p, 0) -> q
     (q, 0) -> q
     (q, 1) -> r
     (p, 1) -> r
+    (p, 2) -> s
