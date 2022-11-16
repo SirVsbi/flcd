@@ -1,0 +1,39 @@
+Code on github: https://github.com/SirVsbi/flcd/tree/main/lab4
+
+
+
+
+State:
+   Class that represents a state, has
+   -> value: string
+   -> transitions: Dictionary of state -> transition value
+
+FA stores the following values:
+    states: List of States
+    initial state: State
+    end states: List of States
+    transitions (Dictionary[(source state name, transition value)] = destination state), alphabet(list of strings) stored for faster access during printing
+
+Verifying if FA is DSA:
+    if a state has transitions to multiple other states with the same transition value
+
+Checking if a sequence is accepted by the FA:
+    - check if it's deterministic
+    - iterating over the sequences using the above graph data structure, if no transition found, than the sequence is not accepted
+    - check if the final state is in fact part of the final states. Otherwise the sequence is not accepted
+
+
+input file is in the following ebnf form:
+
+non_zero_digit = "1"|"2"| .. |"9"
+digit = "0"|"1"|..|"9"
+number = non_zero_digit{digit}
+letter = a|b|..|z|A|B..|Z
+character = letter | digit
+firstLine = "Q" "=" {character}
+secondLine = "E" "=" {number}
+thirdLine = "q0" "=" letter
+fourthLine = "F" "=" {character}
+triple = "(" {character} "," {character} ")" "->" {character}
+fifthLine = "S" "="  {triple "\n"}
+inputFile = firstLine "\n" secondLine "\n" thirdLine "\n" fourthLine "\n" fifthLine
