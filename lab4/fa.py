@@ -70,7 +70,6 @@ class FA:
         if not self.isDFA():
             return False
         current_state = self.initial_state.value
-        print(self.transitions.keys())
         for symbol in sequence:
             if (current_state, symbol) not in self.transitions.keys():
                 return False

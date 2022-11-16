@@ -1,5 +1,6 @@
 import re
 
+from lab4.fa import FA
 from languageSymbols import read_file, reservedWords, separators, operators
 from pif import PIF
 from scanner import Scanner
@@ -15,8 +16,11 @@ class Main:
 
     def run(self):
         read_file()
-        file_name = "p1err.txt"
+        file_name = "p3.txt"
         exception_message = ""
+
+        fa_identifier: FA = FA('fa-identifier.in')
+        fa_constant: FA = FA('fa-constant.in')
 
         with open(file_name, 'r') as file:
             lineCounter = 0
@@ -37,10 +41,10 @@ class Main:
                         else:
                             exception_message += 'Lexical error at token ' + tokens[i] + ', at line ' + str(
                                 lineCounter) + "\n"
-                    elif self.scanner.isIdentifier(tokens[i]):
+                    elif fa_identifier.is_accepted(tokens[i]):
                         id = self.st.add(tokens[i])
                         self.pif.add("id", id)
-                    elif self.scanner.isConstant(tokens[i]):
+                    elif fa_constant.is_accepted(tokens[i]):
                         const = self.st.add(extra + tokens[i])
                         extra = ''
                         self.pif.add("const", const)
