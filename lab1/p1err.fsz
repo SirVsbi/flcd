@@ -1,0 +1,9 @@
+int a = 3 //unrecognized token: a 
+
+a : int = 3 //good 
+
+
+
+
+function(a: whatever) : void |> print(whatever) /lexical error function(a:whatever) is not a recognized token /syntax error: whatever is not defiend
+function asd(b: whatever): void |> print(b) /good   

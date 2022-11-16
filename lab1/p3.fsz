@@ -1,0 +1,38 @@
+//packages 
+from io import console
+
+
+
+//
+Lambda with return value 
+    func -> whatever 
+Lambda without return value
+    func |> whate
+
+
+//
+
+//variable number of arguments  
+function handle_response(...args: number): void {
+    //loops over elements, and a switch statement 
+    when args{
+        401 |> print("Unauthorized")
+        404 |> print("Not found") 
+        else |> print("Error")
+    }
+}
+
+
+main{
+    number_of_codes: int = console()
+        //type deduced from constant      //every value is immutablem so no i++ 
+
+    error_codes: array[number]
+    for(let i = 0; i < number_of_codes; i = i + 1){
+        error_codes[i] = console()
+    }
+
+    handle_response(error_codes)
+
+
+}

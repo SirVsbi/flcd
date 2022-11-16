@@ -1,0 +1,14 @@
+number_expression = int_constant | identifier | "(" number_expression ("+"|"-"|"*"|"/") number_expression ")"
+string_expression = string_constant | identifier | string_expression "+" string_expression
+expression = number_expression | string_expression
+condition = number_expression ("=="|"<="|"<"|">"|">=") number_expression | string_expression "==" string_expression
+if_stmt = "if" "(" condition ")" "{" {statement} "}" ["else" "{" {statement} "}"]
+assign_stmt = identifier "=" expression
+while_stmt = "while" "(" condition ")" "{" {statment} "}" 
+assingment_stmt = idenntifier "=" expression
+typedef_stmt = "typedef" identifier "{" {("string" ":" identifier ",")|("number" ":" identifier ",") }
+declaration_stmt = "let"|"var" ":" identifier
+vector_stmt = "vector" "<" "number"|"string" ">" identifier
+print_stmt = "console" "(" identifier ")"
+stmt = {if_stmt|while_stmt|... <- here comes all the statements from above} 
+start = {stmt} 

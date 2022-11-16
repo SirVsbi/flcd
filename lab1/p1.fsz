@@ -1,0 +1,18 @@
+/This is a line comment 
+
+// This 
+    is 
+    a
+    blcok
+//  Comment 
+
+
+/define a number and an address and a function 
+const a: integer = 3; 
+const b: address = null; 
+const c: function = (a: integer) => &a
+
+
+//prints the address of a
+print(c(b)) 
+

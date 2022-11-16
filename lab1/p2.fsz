@@ -1,0 +1,31 @@
+//custom data type, with 8 bits of padding in the middle 
+type data -> number > 8b > string 
+
+
+function increasing_order(numbers: array<number>): array<number> -> {
+    a, b, c = numbers 
+    if(a > b > c) 
+        return [a, b, c]
+    if(a > c > b)
+        return [a, c, b]
+    if(b > a > c)
+        return [b, a, c]
+    if(b > c > a)
+        return [b, c, a]
+    if(c > a > b)
+        return [c, a, b]
+    return [c, b, a]
+
+}
+
+function a
+
+
+main{
+    a: array<number> = [2, 5, 6]
+
+    //prints [6, 5, 2]
+    print(increasing_order(a))
+    
+        
+}

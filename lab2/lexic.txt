@@ -1,0 +1,26 @@
+Lexical defnitinitions of the language <Here comes the name> 
+
+Alphabet: 
+		- upper and lower case letters with some special characters[a-z][A-Z][áéöüőú]
+		- some emojis. Emojis are cool 😺 (subject to change) 
+		- special symbols: 
+			- operators: + - * / = <= == >= ! ^ & ?: += -= *= /= %= % || && >> << | (here we have operators that only work with boolean values for example, more on this later) -> (member access operator) 
+			- separators: " "(space) : ; [] {} /n (newline) 
+			- reserved words: while, var, string, vector, console, print, let, const, typedef, if, number
+			- reserved symbols: // <- comments 
+
+
+Data types: 
+	number - any real value 
+	string - unicode characters enclodes in "" (double quotes)
+	typedef - an encapsulation of any other number and string combinations (basically a struct from C)
+
+Identifiers in EDNF
+	digit="0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"
+	non_zero_digit="1"|...|"9"
+	operator="+"|"-"|... <- the list of operators from above 
+	letter="a"|"b"|...|"z"|"A"|...|"Z"|"á"|"Á"|...|"ű"|"Ű"
+	identifier=(letter){letter|digit}
+	number_constant="0"|["-"|"+"] non_zero_digit {digit}["."{digit}]
+	string_constant="""{letter|digit|operator|" "}"""
+		
