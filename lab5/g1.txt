@@ -1,0 +1,8 @@
+terminals = {A, B, C}
+non_terminals = {0, 1}
+starting_symbol = A
+productions = {
+    A -> 0 | 0 A
+    B -> 0 | 0 S | 1 A A
+    C -> 1 | 1 A | 0 B B
+}
