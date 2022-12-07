@@ -1,0 +1,10 @@
+terminals = {a, +, *, (, )}
+non_terminals = {S, A, B, C, D}
+starting_symbol = S
+productions = {
+	S -> B A
+	A -> + B A | E
+	B -> D C
+	C -> * D C | E
+	D -> ( S ) | a
+}

@@ -1,8 +1,9 @@
-terminals = {A, B, C}
-non_terminals = {0, 1}
-starting_symbol = A
+terminals = {(, ), +, *, int}
+non_terminals = {S, A, B, C}
+starting_symbol = S
 productions = {
-    A -> 0 | 0 A
-    B -> 0 | 0 S | 1 A A
-    C -> 1 | 1 A | 0 B B
+	S -> A B,
+	A -> ( S ) | int C,
+	B -> + S | E,
+	C -> * A | E
 }

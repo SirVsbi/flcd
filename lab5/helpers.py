@@ -23,6 +23,10 @@ def parse_productions(productions_text):
     productions: List[Production] = list()
     for line in productions_list:
         lhs, rhs = line.split("->")
+        rhs.strip()
+        rhs = rhs.split("|")
+
+        print(rhs)
         lhs.strip().replace("\n", "")
         productions.append(Production(lhs, rhs))
     return productions
